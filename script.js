@@ -102,13 +102,27 @@ function initSite() {
       siteNav.classList.toggle('is-open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
     });
-    siteNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-      const wasOpen = siteNav.classList.contains('is-open')
-        || navToggle.getAttribute('aria-expanded') === 'true';
-      closeMenu();
-      if (wasOpen) focusNavigationDestination(link);
-    }));
   }
+
+  const handleInternalNavigation = (event) => {
+    const link = event.currentTarget;
+    const destinationId = link.hash && decodeURIComponent(link.hash.slice(1));
+    const destination = destinationId && document.getElementById(destinationId);
+    if (!destination) return;
+
+    event.preventDefault();
+    const isMenuLink = Boolean(siteNav && siteNav.contains(link));
+    const wasMenuOpen = isMenuLink && (
+      siteNav.classList.contains('is-open')
+      || (navToggle && navToggle.getAttribute('aria-expanded') === 'true')
+    );
+    if (isMenuLink) closeMenu();
+    destination.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    if (wasMenuOpen || link.classList.contains('skip-link')) focusNavigationDestination(link);
+  };
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', handleInternalNavigation);
+  });
 
   const revealElements = document.querySelectorAll('.reveal');
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {
@@ -390,20 +404,12 @@ function initSite() {
   }
 
   const backToTop = document.querySelector('#back-to-top');
-  const hero = document.querySelector('#home');
   const updateBackToTop = () => {
     if (backToTop) backToTop.hidden = window.scrollY <= 600;
   };
 
   updateBackToTop();
   window.addEventListener('scroll', updateBackToTop, { passive: true });
-  if (backToTop && hero) {
-    backToTop.addEventListener('click', (event) => {
-      event.preventDefault();
-      hero.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-    });
-  }
-
   document.querySelectorAll('[data-current-year]').forEach((element) => {
     element.textContent = String(new Date().getFullYear());
   });

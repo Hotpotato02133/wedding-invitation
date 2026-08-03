@@ -50,6 +50,7 @@ check(/<meta\s+name="description"[^>]+content="[^"]+"/i.test(html), 'description
 check(/<meta\s+name="theme-color"[^>]+content="#[0-9a-f]{6}"/i.test(html), 'theme color metadata is present');
 check(html.includes('<title>Ivan &amp; Lesley | December 8, 2026</title>'), 'confirmed page title is present');
 check(html.includes('<a class="monogram" href="#home" aria-label="Ivan and Leslie, home">Ivan <span>&amp;</span> Leslie</a>'), 'navigation logo displays Ivan & Leslie');
+check(html.includes('<footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top">Ivan <span>&amp;</span> Leslie</a>'), 'footer logo displays Ivan & Leslie');
 check(/<link\s+rel="icon"[^>]+href="data:image\/svg\+xml,/i.test(html), 'data-URI favicon is present');
 ['Great+Vibes', 'Cormorant+Garamond', 'Montserrat'].forEach((font) => {
   check(html.includes(font), `${font.replaceAll('+', ' ')} font is requested`);
@@ -97,6 +98,7 @@ check(css.includes(':focus-visible'), 'visible focus styling is present');
 check(/min-height:\s*44px/.test(getRule('button, a')), 'links and buttons have a 44px minimum target height');
 check(/width:\s*44px/.test(getRule('.nav-toggle')), 'mobile navigation toggle has a 44px target width');
 check(/min-height:\s*48px/.test(getRule('.form-field input:not([type="radio"]), .form-field select, .form-field textarea')), 'form controls exceed the 44px target minimum');
+check(/padding:\s*2\.5rem 1rem \.75rem/.test(getRule('.site-footer')), 'footer uses compact bottom padding without excess space');
 check(/width:\s*46px/.test(getRule('.lightbox-close')) && /height:\s*46px/.test(getRule('.lightbox-close')), 'lightbox controls exceed the 44px target minimum');
 check(!/width:\s*100vw/.test(css), 'fixed-width viewport declarations do not risk horizontal overflow');
 
@@ -145,6 +147,7 @@ check(/prefers-reduced-motion:[\s\S]*\.reveal[^{]*\{[^}]*opacity:\s*1\s*!importa
 check(script.includes('event.target === lightbox || event.target === lightboxFigure'), 'empty lightbox figure space acts as backdrop without matching media or controls');
 check(script.includes('closeMenu({ returnFocus: true })'), 'Escape closes the mobile menu and returns focus to its toggle');
 check(script.includes('focusNavigationDestination(link)'), 'mobile navigation activation moves focus to its destination');
+check(script.includes('handleInternalNavigation') && script.includes("document.querySelectorAll('a[href^=\"#\"]')") && script.includes("link.addEventListener('click', handleInternalNavigation)"), 'internal links use JavaScript section navigation instead of file URL fragments');
 check(script.includes("element.setAttribute('inert', '')") && script.includes("element.setAttribute('aria-hidden', 'true')"), 'fallback modal makes background content inert and hidden from accessibility APIs');
 check(script.includes("event.key === 'Tab'") && script.includes('trapFallbackFocus'), 'fallback modal contains keyboard focus');
 check(/body\.lightbox-open/.test(css) && /overflow:\s*hidden/.test(getRule('body.lightbox-open')), 'open lightbox locks background scrolling');
