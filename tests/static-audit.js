@@ -58,6 +58,7 @@ check(html.includes('href="styles.css"') && html.includes('src="script.js"'), 'l
 ['December 08, 2026', '4:30 PM', 'Grand Astoria Regency'].forEach((detail) => {
   check(html.includes(detail), `confirmed content is preserved: ${detail}`);
 });
+check(html.includes('href="https://www.google.com/maps/search/?api=1&amp;query=W3XF%2BWCG%20Astoria%20Regency%2C%20Pasonanca%20Road%2C%20Zamboanga%20City%2C%20Zamboanga%20Del%20Sur"'), 'directions link targets Astoria Regency by exact Plus Code and address');
 
 const sectionIds = ['home', 'countdown', 'details', 'couple', 'entourage', 'gallery'];
 sectionIds.forEach((id) => {
@@ -81,7 +82,9 @@ images.forEach((image, index) => {
   check(/\bloading="lazy"/i.test(image), `below-fold image ${index + 1} lazy loads`);
 });
 
-check(html.includes('id="wedding-music"') && html.includes('src="music/wedding-theme.mp3"'), 'placeholder audio source is present');
+check(html.includes('id="wedding-music"') && html.includes('src="music/paulyudin-wedding-music-valentines-day-182505.mp3"'), 'selected wedding soundtrack is present');
+check(/<audio\b[^>]*\bid="wedding-music"[^>]*\bautoplay[^>]*\bloop/i.test(html), 'background music attempts autoplay and loops');
+check(script.includes('startMusicOnFirstInteraction') && script.includes("document.addEventListener('pointerdown'") && script.includes("document.addEventListener('keydown'"), 'blocked autoplay retries after the visitor first interacts');
 check(html.includes('id="gallery-lightbox"') && html.includes('aria-label="Close image"'), 'lightbox and close control are present');
 check(script.includes("'Previous image'") && script.includes("'Next image'"), 'previous and next lightbox controls are present');
 

@@ -1,5 +1,5 @@
 # Wedding music
 
-Place the optional `wedding-theme.mp3` file in this folder. Use an optimized, properly licensed MP3 under 5 MB so the invitation remains quick to load.
+The invitation uses `paulyudin-wedding-music-valentines-day-182505.mp3` as its looping background soundtrack. Keep the file optimized and properly licensed so the invitation remains quick to load.
 
-Browsers require a visitor to press the music control before audio can begin playing. The page deliberately does not autoplay the track.
+The page attempts autoplay when permitted. If the browser blocks audible autoplay, playback begins after the visitor's first interaction; the floating music control can still pause or resume it.

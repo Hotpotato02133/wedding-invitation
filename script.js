@@ -139,11 +139,33 @@ function initSite() {
     if (musicIcon) musicIcon.textContent = isPlaying ? '❚❚' : '♫';
   };
   const announceMusicUnavailable = () => {
-    if (musicStatus) musicStatus.textContent = 'Add music/wedding-theme.mp3 to enable the soundtrack.';
+    if (musicStatus) musicStatus.textContent = 'The wedding soundtrack could not be played.';
   };
 
   if (audio && musicToggle) {
-    audio.addEventListener('play', () => setMusicState(true));
+    const clearFirstInteractionListeners = () => {
+      document.removeEventListener('pointerdown', startMusicOnFirstInteraction);
+      document.removeEventListener('keydown', startMusicOnFirstInteraction);
+    };
+    async function startMusicOnFirstInteraction(event) {
+      if (musicToggle.contains(event.target)) return;
+      if (!audio.paused) {
+        clearFirstInteractionListeners();
+        return;
+      }
+      try {
+        await audio.play();
+      } catch (error) {
+        setMusicState(false);
+        announceMusicUnavailable();
+      }
+    }
+    document.addEventListener('pointerdown', startMusicOnFirstInteraction, { passive: true });
+    document.addEventListener('keydown', startMusicOnFirstInteraction);
+    audio.addEventListener('play', () => {
+      clearFirstInteractionListeners();
+      setMusicState(true);
+    });
     audio.addEventListener('pause', () => setMusicState(false));
     audio.addEventListener('error', announceMusicUnavailable);
     musicToggle.addEventListener('click', async () => {
