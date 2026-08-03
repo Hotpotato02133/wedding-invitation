@@ -49,20 +49,24 @@ check(/<meta\s+name="viewport"[^>]+width=device-width/i.test(html), 'responsive 
 check(/<meta\s+name="description"[^>]+content="[^"]+"/i.test(html), 'description metadata is present');
 check(/<meta\s+name="theme-color"[^>]+content="#[0-9a-f]{6}"/i.test(html), 'theme color metadata is present');
 check(html.includes('<title>Ivan &amp; Lesley | December 8, 2026</title>'), 'confirmed page title is present');
+check(html.includes('<a class="monogram" href="#home" aria-label="Ivan and Leslie, home">Ivan <span>&amp;</span> Leslie</a>'), 'navigation logo displays Ivan & Leslie');
 check(/<link\s+rel="icon"[^>]+href="data:image\/svg\+xml,/i.test(html), 'data-URI favicon is present');
 ['Great+Vibes', 'Cormorant+Garamond', 'Montserrat'].forEach((font) => {
   check(html.includes(font), `${font.replaceAll('+', ' ')} font is requested`);
 });
 check(html.includes('href="styles.css"') && html.includes('src="script.js"'), 'local stylesheet and script are linked');
-['December 08, 2026', '4:30 PM', 'Grand Astoria Regency', 'November 8, 2026'].forEach((detail) => {
+['December 08, 2026', '4:30 PM', 'Grand Astoria Regency'].forEach((detail) => {
   check(html.includes(detail), `confirmed content is preserved: ${detail}`);
 });
 
-const sectionIds = ['home', 'countdown', 'details', 'couple', 'entourage', 'gallery', 'rsvp'];
+const sectionIds = ['home', 'countdown', 'details', 'couple', 'entourage', 'gallery'];
 sectionIds.forEach((id) => {
   check(new RegExp(`<section\\b[^>]*\\bid="${id}"`, 'i').test(html), `section #${id} is present`);
   check(html.includes(`href="#${id}"`), `navigation link to #${id} is present`);
 });
+check(!/<section\b[^>]*\bid="rsvp"/i.test(html), 'RSVP section is absent');
+check(!html.includes('href="#rsvp"'), 'RSVP navigation link is absent');
+check(!html.includes('id="rsvp-form"'), 'RSVP form is absent');
 
 const galleryItems = html.match(/<button\s+class="gallery-item"[\s\S]*?<\/button>/g) || [];
 check(galleryItems.length === 6, 'gallery contains exactly six buttons');
@@ -78,9 +82,6 @@ images.forEach((image, index) => {
 });
 
 check(html.includes('id="wedding-music"') && html.includes('src="music/wedding-theme.mp3"'), 'placeholder audio source is present');
-['fullName', 'guests', 'attendance', 'message'].forEach((name) => {
-  check(new RegExp(`\\bname="${name}"`).test(html), `RSVP field ${name} is present`);
-});
 check(html.includes('id="gallery-lightbox"') && html.includes('aria-label="Close image"'), 'lightbox and close control are present');
 check(script.includes("'Previous image'") && script.includes("'Next image'"), 'previous and next lightbox controls are present');
 
@@ -101,13 +102,6 @@ check(/color:\s*var\(--forest\)/.test(scrolledHeader), 'scrolled header uses for
 check(/background:\s*var\(--ivory\)/.test(scrolledHeader), 'scrolled header uses an opaque ivory surface');
 check(/box-shadow:/.test(scrolledHeader), 'scrolled header has a separating shadow');
 check(/\.site-header\.is-scrolled[\s\S]*@media \(prefers-reduced-motion/.test(css), 'scrolled header rule follows desktop header overrides');
-
-const rsvpForm = html.match(/<form\b[^>]*\bid="rsvp-form"[\s\S]*?<\/form>/i)?.[0] || '';
-check(/<fieldset\b[^>]*\bid="rsvp-fields"[^>]*\bdisabled/i.test(rsvpForm), 'RSVP controls are disabled in the HTML baseline');
-check(/<noscript>[\s\S]*?<\/noscript>/i.test(rsvpForm), 'RSVP includes a no-JavaScript explanation');
-const submitHandlerIndex = script.indexOf("rsvpForm.addEventListener('submit'");
-const enableRsvpIndex = script.indexOf('rsvpFields.disabled = false');
-check(submitHandlerIndex >= 0 && enableRsvpIndex > submitHandlerIndex, 'RSVP controls enable only after the local submit handler is installed');
 
 const countdownGridTag = html.match(/<div\b[^>]*\bclass="countdown-grid"[^>]*>/i)?.[0] || '';
 check(/\brole="timer"/.test(countdownGridTag) && /\baria-live="off"/.test(countdownGridTag), 'countdown numeric updates use a non-live timer');
@@ -148,7 +142,6 @@ check(/prefers-reduced-motion:[\s\S]*\.reveal[^{]*\{[^}]*opacity:\s*1\s*!importa
 check(script.includes('event.target === lightbox || event.target === lightboxFigure'), 'empty lightbox figure space acts as backdrop without matching media or controls');
 check(script.includes('closeMenu({ returnFocus: true })'), 'Escape closes the mobile menu and returns focus to its toggle');
 check(script.includes('focusNavigationDestination(link)'), 'mobile navigation activation moves focus to its destination');
-check(/<fieldset\b[^>]*\baria-describedby="attendance-error"/i.test(rsvpForm), 'attendance error describes the full radio group');
 check(script.includes("element.setAttribute('inert', '')") && script.includes("element.setAttribute('aria-hidden', 'true')"), 'fallback modal makes background content inert and hidden from accessibility APIs');
 check(script.includes("event.key === 'Tab'") && script.includes('trapFallbackFocus'), 'fallback modal contains keyboard focus');
 check(/body\.lightbox-open/.test(css) && /overflow:\s*hidden/.test(getRule('body.lightbox-open')), 'open lightbox locks background scrolling');
