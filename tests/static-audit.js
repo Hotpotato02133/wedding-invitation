@@ -112,6 +112,8 @@ check(submitHandlerIndex >= 0 && enableRsvpIndex > submitHandlerIndex, 'RSVP con
 const countdownGridTag = html.match(/<div\b[^>]*\bclass="countdown-grid"[^>]*>/i)?.[0] || '';
 check(/\brole="timer"/.test(countdownGridTag) && /\baria-live="off"/.test(countdownGridTag), 'countdown numeric updates use a non-live timer');
 check(/id="countdown-status"[^>]*aria-live="polite"/.test(html), 'countdown has a separate polite status region');
+const countdownEmptyRule = getRule('.countdown-status:empty');
+check(!/display\s*:\s*none|visibility\s*:\s*hidden/.test(countdownEmptyRule), 'empty countdown status remains exposed to assistive technology');
 check(script.includes('countdownStatus') && script.includes("countdownStatus.textContent = 'Today is the day!';"), 'expired countdown announces through the separate status region');
 
 const colors = {
