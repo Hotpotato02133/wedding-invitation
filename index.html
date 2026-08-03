@@ -40,9 +40,10 @@
 
       <section id="countdown" class="countdown-section section reveal" aria-labelledby="countdown-title">
         <div class="section-heading"><p class="eyebrow">Save the date</p><h2 id="countdown-title">Counting down to forever</h2><div class="heading-divider" aria-hidden="true">✦</div></div>
-        <div class="countdown-grid" aria-live="polite" aria-label="Time until the wedding">
+        <div class="countdown-grid" role="timer" aria-live="off" aria-atomic="false" aria-label="Time until the wedding">
           <div><strong data-countdown="days">000</strong><span>Days</span></div><div><strong data-countdown="hours">00</strong><span>Hours</span></div><div><strong data-countdown="minutes">00</strong><span>Minutes</span></div><div><strong data-countdown="seconds">00</strong><span>Seconds</span></div>
         </div>
+        <p id="countdown-status" class="countdown-status" aria-live="polite"></p>
       </section>
 
       <!-- EDITABLE: Ceremony and reception information. -->
@@ -93,11 +94,15 @@
       <section id="rsvp" class="rsvp-section section reveal" aria-labelledby="rsvp-title">
         <div class="section-heading"><p class="eyebrow">Kindly respond</p><h2 id="rsvp-title">Will you celebrate with us?</h2><div class="heading-divider" aria-hidden="true">✦</div><p class="section-intro">Please let us know by November 8, 2026.</p></div>
         <form id="rsvp-form" class="rsvp-form" novalidate>
-          <div class="form-field form-wide"><label for="full-name">Full name</label><input id="full-name" name="fullName" type="text" autocomplete="name" required aria-describedby="full-name-error" /><p id="full-name-error" class="form-error" data-error-for="fullName"></p></div>
-          <div class="form-field"><label for="guests">Number of guests</label><select id="guests" name="guests" required aria-describedby="guests-error"><option value="">Select guests</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><p id="guests-error" class="form-error" data-error-for="guests"></p></div>
-          <fieldset class="form-field"><legend>Will you attend?</legend><div class="radio-row"><label><input type="radio" name="attendance" value="yes" required aria-describedby="attendance-error" /> Joyfully accepts</label><label><input type="radio" name="attendance" value="no" /> Regretfully declines</label></div><p id="attendance-error" class="form-error" data-error-for="attendance"></p></fieldset>
-          <div class="form-field form-wide"><label for="message">A note for the couple <span>(optional)</span></label><textarea id="message" name="message" rows="4" placeholder="Share a wish, a memory, or a little love."></textarea></div>
-          <div class="form-wide form-submit"><button class="button button-dark" type="submit">Send RSVP <span aria-hidden="true">♡</span></button></div>
+          <noscript><p class="noscript-message">Online RSVP requires JavaScript. Please contact the couple directly to share your response.</p></noscript>
+          <fieldset id="rsvp-fields" class="rsvp-fields" disabled>
+            <legend class="sr-only">RSVP response</legend>
+            <div class="form-field form-wide"><label for="full-name">Full name</label><input id="full-name" name="fullName" type="text" autocomplete="name" required aria-describedby="full-name-error" /><p id="full-name-error" class="form-error" data-error-for="fullName"></p></div>
+            <div class="form-field"><label for="guests">Number of guests</label><select id="guests" name="guests" required aria-describedby="guests-error"><option value="">Select guests</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><p id="guests-error" class="form-error" data-error-for="guests"></p></div>
+            <fieldset class="form-field" aria-describedby="attendance-error"><legend>Will you attend?</legend><div class="radio-row"><label><input type="radio" name="attendance" value="yes" required /> Joyfully accepts</label><label><input type="radio" name="attendance" value="no" /> Regretfully declines</label></div><p id="attendance-error" class="form-error" data-error-for="attendance"></p></fieldset>
+            <div class="form-field form-wide"><label for="message">A note for the couple <span>(optional)</span></label><textarea id="message" name="message" rows="4" placeholder="Share a wish, a memory, or a little love."></textarea></div>
+            <div class="form-wide form-submit"><button class="button button-dark" type="submit">Send RSVP <span aria-hidden="true">♡</span></button></div>
+          </fieldset>
         </form>
       </section>
     </main>
