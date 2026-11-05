@@ -21,12 +21,13 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
-    <a class="monogram" href="#home" aria-label="Ivan and Leslie, home"><img src="images/MONOGRAM.png" alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
+    <a class="monogram" href="#home" aria-label="Ivan and Leslie, home"><img src="images/MONOGRAM.png"
+        alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
     <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><span
         class="sr-only">Toggle navigation</span><i></i><i></i><i></i></button>
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#countdown">Countdown</a><a href="#details">Details</a><a href="#couple">Our
-        Story</a><a href="#entourage">Entourage</a><a href="#gallery">Gallery</a>
+      <a href="#home">Home</a><a href="#countdown">Countdown</a><a href="#entourage">Entourage</a><a href="#details">Details</a><a href="#couple">The
+        Couple</a>
     </nav>
   </header>
 
@@ -49,7 +50,7 @@
     <section id="countdown" class="countdown-section section reveal" aria-labelledby="countdown-title">
       <div class="section-heading">
         <p class="eyebrow">Save the date</p>
-        <h2 id="countdown-title"><em>Counting down to forever</em></h2>
+        <h2 id="countdown-title"><em>Counting Down to Forever</em></h2>
         <div class="heading-divider" aria-hidden="true">✦</div>
       </div>
       <div class="countdown-grid" role="timer" aria-live="off" aria-atomic="false" aria-label="Time until the wedding">
@@ -61,11 +62,44 @@
       <p id="countdown-status" class="countdown-status" aria-live="polite"></p>
     </section>
 
+    <section id="entourage" class="entourage-section section reveal" aria-labelledby="entourage-title">
+      <div class="section-heading">
+        <p class="eyebrow">With love and gratitude</p>
+        <h2 id="entourage-title">Our Entourage</h2>
+        <div class="heading-divider" aria-hidden="true">✦</div>
+      </div>
+      <div class="entourage-grid">
+        <section>
+          <h3>Parents of the Groom</h3>
+          <p>Mr. &amp; Mrs. Antonio Reyes</p>
+          <h3>Parents of the Bride</h3>
+          <p>Dr. &amp; Mrs. Roberto Santos</p>
+        </section>
+        <section>
+          <h3>Principal Sponsors</h3>
+          <p>Mr. &amp; Mrs. Daniel Cruz<br />Mr. &amp; Mrs. Miguel Villanueva<br />Atty. &amp; Mrs. Ramon
+            Garcia<br />Mr. &amp; Mrs. Gabriel Tan</p>
+        </section>
+        <section>
+          <h3>Honor Attendants</h3>
+          <p>Bianca Reyes, Maid of Honor<br />Marco Santos, Best Man</p>
+          <h3>Bridesmaids &amp; Groomsmen</h3>
+          <p>Camille Cruz · Sofia Tan · Bea Lim<br />Adrian Reyes · Paolo Cruz · Nico Lim</p>
+        </section>
+        <section>
+          <h3>Bearers</h3>
+          <p>Lucas Santos, Ring Bearer<br />Ethan Reyes, Coin Bearer<br />Noah Cruz, Bible Bearer</p>
+          <h3>Flower Girls</h3>
+          <p>Amelia Tan · Isla Garcia · Mia Villanueva</p>
+        </section>
+      </div>
+    </section>
+
     <!-- EDITABLE: Ceremony and reception information. -->
     <section id="details" class="details-section section reveal" aria-labelledby="details-title">
       <div class="section-heading">
         <p class="eyebrow celebration-eyebrow">The <span class="celebration-word">Celebration</span></p>
-        <h2 id="details-title">A Day to Remember</h2>
+        <h2 id="details-title">A Day To Remember</h2>
         <div class="heading-divider" aria-hidden="true">✦</div>
       </div>
       <div class="details-grid">
@@ -130,131 +164,69 @@
       </div>
     </section>
 
-    <!-- EDITABLE: Replace the profile image URLs with images/groom.jpg and images/bride.jpg. -->
     <section id="couple" class="couple-section section reveal" aria-labelledby="couple-title">
-      <div class="section-heading">
-        <p class="eyebrow">The couple</p>
-        <h2 id="couple-title">Two hearts, one story</h2>
-        <div class="heading-divider" aria-hidden="true">✦</div>
-      </div>
-      <div class="couple-grid">
-        <article class="profile profile-groom"><img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
-            alt="Ivan in a dark suit smiling outdoors" loading="lazy" />
-          <div class="profile-copy">
-            <p class="eyebrow">The groom</p>
-            <h3>Ivan</h3>
-            <p>Grounded, kind, and always ready with a perfectly timed joke, Ivan makes every ordinary day feel a little
-              more golden.</p>
+      <div class="carousel" role="region" aria-roledescription="carousel" aria-label="The Couple photo carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <img src="images/carousel 1.jpg" alt="Ivan and Leslie smiling together in celebration" class="carousel-img"
+              loading="lazy" />
+            <div class="carousel-overlay">
+              <div class="section-heading carousel-heading">
+                <p class="eyebrow light">The couple</p>
+                <h2 id="couple-title">Two hearts, one story</h2>
+                <div class="heading-divider" aria-hidden="true">✦</div>
+              </div>
+            </div>
           </div>
-        </article>
-        <article class="profile profile-bride"><img
-            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
-            alt="Leslie in an elegant white dress holding flowers" loading="lazy" />
-          <div class="profile-copy">
-            <p class="eyebrow">The bride</p>
-            <h3>Leslie</h3>
-            <p>Graceful, curious, and full of warmth, Leslie is the heart behind the thoughtful details that make a
-              house feel like home.</p>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
+            <img src="images/carousel 2.jpg" alt="Romantic portrait of Ivan and Leslie" class="carousel-img"
+              loading="lazy" />
+            <div class="carousel-overlay">
+              <div class="section-heading carousel-heading">
+                <p class="eyebrow light">The couple</p>
+                <h2>Two hearts, one story</h2>
+                <div class="heading-divider" aria-hidden="true">✦</div>
+              </div>
+            </div>
           </div>
-        </article>
-      </div>
-      <div class="story" aria-label="Ivan and Leslie's story">
-        <p class="eyebrow">Our story</p>
-        <ol class="story-timeline">
-          <li><span>2018</span>
-            <div>
-              <h3>A hello that lingered</h3>
-              <p>They met over coffee and a conversation neither wanted to end.</p>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
+            <img src="images/carousel 3.jpg" alt="Ivan and Leslie sharing a tender moment" class="carousel-img"
+              loading="lazy" />
+            <div class="carousel-overlay">
+              <div class="section-heading carousel-heading">
+                <p class="eyebrow light">The couple</p>
+                <h2>Two hearts, one story</h2>
+                <div class="heading-divider" aria-hidden="true">✦</div>
+              </div>
             </div>
-          </li>
-          <li><span>2023</span>
-            <div>
-              <h3>The easiest yes</h3>
-              <p>Under a quiet sky and surrounded by loved ones, Ivan asked—and Leslie said yes.</p>
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
+            <img src="images/carousel 4.jpg" alt="Ivan and Leslie walking hand in hand outdoors" class="carousel-img"
+              loading="lazy" />
+            <div class="carousel-overlay">
+              <div class="section-heading carousel-heading">
+                <p class="eyebrow light">The couple</p>
+                <h2>Two hearts, one story</h2>
+                <div class="heading-divider" aria-hidden="true">✦</div>
+              </div>
             </div>
-          </li>
-          <li><span>2026</span>
-            <div>
-              <h3>Our forever begins</h3>
-              <p>With full hearts, they cannot wait to celebrate the beginning of married life with you.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
+          </div>
+        </div>
 
-    <section id="entourage" class="entourage-section section reveal" aria-labelledby="entourage-title">
-      <div class="section-heading">
-        <p class="eyebrow">With love and gratitude</p>
-        <h2 id="entourage-title">Our entourage</h2>
-        <div class="heading-divider" aria-hidden="true">✦</div>
-      </div>
-      <div class="entourage-grid">
-        <section>
-          <h3>Parents of the Groom</h3>
-          <p>Mr. &amp; Mrs. Antonio Reyes</p>
-          <h3>Parents of the Bride</h3>
-          <p>Dr. &amp; Mrs. Roberto Santos</p>
-        </section>
-        <section>
-          <h3>Principal Sponsors</h3>
-          <p>Mr. &amp; Mrs. Daniel Cruz<br />Mr. &amp; Mrs. Miguel Villanueva<br />Atty. &amp; Mrs. Ramon
-            Garcia<br />Mr. &amp; Mrs. Gabriel Tan</p>
-        </section>
-        <section>
-          <h3>Honor Attendants</h3>
-          <p>Bianca Reyes, Maid of Honor<br />Marco Santos, Best Man</p>
-          <h3>Bridesmaids &amp; Groomsmen</h3>
-          <p>Camille Cruz · Sofia Tan · Bea Lim<br />Adrian Reyes · Paolo Cruz · Nico Lim</p>
-        </section>
-        <section>
-          <h3>Bearers</h3>
-          <p>Lucas Santos, Ring Bearer<br />Ethan Reyes, Coin Bearer<br />Noah Cruz, Bible Bearer</p>
-          <h3>Flower Girls</h3>
-          <p>Amelia Tan · Isla Garcia · Mia Villanueva</p>
-        </section>
-      </div>
-    </section>
+        <button type="button" class="carousel-control carousel-prev" aria-label="Previous slide">&#10094;</button>
+        <button type="button" class="carousel-control carousel-next" aria-label="Next slide">&#10095;</button>
 
-    <!-- EDITABLE: Replace gallery URLs and data-full URLs with images/gallery-1.jpg through images/gallery-6.jpg. -->
-    <section id="gallery" class="gallery-section section reveal" aria-labelledby="gallery-title">
-      <div class="section-heading">
-        <p class="eyebrow">A few favourite moments</p>
-        <h2 id="gallery-title">Our gallery</h2>
-        <div class="heading-divider" aria-hidden="true">✦</div>
-      </div>
-      <div class="gallery-grid">
-        <button class="gallery-item" type="button"
-          data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
-          data-caption="A sunlit celebration of love"><img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="Couple celebrating their engagement in a sunlit field" loading="lazy" /></button>
-        <button class="gallery-item" type="button"
-          data-full="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
-          data-caption="A table set for togetherness"><img
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="Elegant wedding table decorated with flowers and candles" loading="lazy" /></button>
-        <button class="gallery-item" type="button"
-          data-full="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
-          data-caption="The little details"><img
-            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="Delicate flower arrangement at a wedding celebration" loading="lazy" /></button>
-        <button class="gallery-item" type="button"
-          data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
-          data-caption="A beautiful beginning"><img
-            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="Bride and groom sharing a quiet moment together" loading="lazy" /></button>
-        <button class="gallery-item" type="button"
-          data-full="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
-          data-caption="Love in bloom"><img
-            src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="White flowers arranged for a romantic celebration" loading="lazy" /></button>
-        <button class="gallery-item" type="button"
-          data-full="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
-          data-caption="Dancing into forever"><img
-            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-            alt="Couple holding hands during a joyful celebration" loading="lazy" /></button>
+        <div class="carousel-indicators" role="tablist" aria-label="Slide selection">
+          <button type="button" role="tab" aria-selected="true" aria-label="Slide 1 of 4" class="carousel-dot is-active"
+            data-slide-to="0"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Slide 2 of 4" class="carousel-dot"
+            data-slide-to="1"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Slide 3 of 4" class="carousel-dot"
+            data-slide-to="2"></button>
+          <button type="button" role="tab" aria-selected="false" aria-label="Slide 4 of 4" class="carousel-dot"
+            data-slide-to="3"></button>
+        </div>
+        <div class="sr-only carousel-status" aria-live="polite" aria-atomic="true">Slide 1 of 4</div>
       </div>
     </section>
 
@@ -263,7 +235,8 @@
   <section class="closing reveal" aria-label="Closing message">
     <p>“Love is patient, love is kind.” <cite>1 Corinthians 13:4</cite></p><strong>#IVANfoundhisLESLIE</strong>
   </section>
-  <footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top"><img src="images/MONOGRAM.png" alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
+  <footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top"><img src="images/MONOGRAM.png"
+        alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
     <p>Made with love for our favourite people.</p><small>© <span data-current-year>2026</span> Ivan &amp;
       Leslie</small>
   </footer>

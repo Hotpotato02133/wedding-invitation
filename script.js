@@ -413,6 +413,143 @@ function initSite() {
   document.querySelectorAll('[data-current-year]').forEach((element) => {
     element.textContent = String(new Date().getFullYear());
   });
+  function initCoupleCarousel() {
+    const carousel = document.querySelector('#couple .carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+    const status = carousel.querySelector('.carousel-status');
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+    const autoPlayDelay = 5000;
+    const totalSlides = slides.length;
+
+    function goToSlide(index) {
+      currentIndex = (index + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      slides.forEach((slide, i) => {
+        const isActive = i === currentIndex;
+        slide.setAttribute('aria-hidden', String(!isActive));
+      });
+
+      dots.forEach((dot, i) => {
+        const isActive = i === currentIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', String(isActive));
+      });
+
+      if (status) {
+        status.textContent = `Slide ${currentIndex + 1} of ${totalSlides}`;
+      }
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    function startAutoPlay() {
+      if (prefersReducedMotion) return;
+      stopAutoPlay();
+      autoPlayTimer = window.setInterval(nextSlide, autoPlayDelay);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        window.clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        startAutoPlay();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoPlay();
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const targetIndex = Number(dot.dataset.slideTo);
+        if (!Number.isNaN(targetIndex)) {
+          goToSlide(targetIndex);
+          startAutoPlay();
+        }
+      });
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+    carousel.addEventListener('focusin', stopAutoPlay);
+    carousel.addEventListener('focusout', startAutoPlay);
+
+    carousel.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        prevSlide();
+        startAutoPlay();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        nextSlide();
+        startAutoPlay();
+      }
+    });
+
+    let startX = 0;
+    let deltaX = 0;
+    let isDragging = false;
+
+    carousel.addEventListener('pointerdown', (event) => {
+      if (event.target.closest('button')) return;
+      isDragging = true;
+      startX = event.clientX;
+      deltaX = 0;
+      stopAutoPlay();
+    }, { passive: true });
+
+    carousel.addEventListener('pointermove', (event) => {
+      if (!isDragging) return;
+      deltaX = event.clientX - startX;
+    }, { passive: true });
+
+    const finishSwipe = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      const threshold = 40;
+      if (deltaX > threshold) {
+        prevSlide();
+      } else if (deltaX < -threshold) {
+        nextSlide();
+      }
+      startAutoPlay();
+    };
+
+    carousel.addEventListener('pointerup', finishSwipe, { passive: true });
+    carousel.addEventListener('pointercancel', finishSwipe, { passive: true });
+
+    goToSlide(0);
+    startAutoPlay();
+  }
+
+  initCoupleCarousel();
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Tab') trapFallbackFocus(event);

@@ -61,7 +61,7 @@ check(html.includes('href="styles.css"') && html.includes('src="script.js"'), 'l
 });
 check(html.includes('href="https://www.google.com/maps/search/?api=1&amp;query=W3XF%2BWCG%20Astoria%20Regency%2C%20Pasonanca%20Road%2C%20Zamboanga%20City%2C%20Zamboanga%20Del%20Sur"'), 'directions link targets Astoria Regency by exact Plus Code and address');
 
-const sectionIds = ['home', 'countdown', 'details', 'couple', 'entourage', 'gallery'];
+const sectionIds = ['home', 'countdown', 'details', 'couple', 'entourage'];
 sectionIds.forEach((id) => {
   check(new RegExp(`<section\\b[^>]*\\bid="${id}"`, 'i').test(html), `section #${id} is present`);
   check(html.includes(`href="#${id}"`), `navigation link to #${id} is present`);
@@ -69,9 +69,11 @@ sectionIds.forEach((id) => {
 check(!/<section\b[^>]*\bid="rsvp"/i.test(html), 'RSVP section is absent');
 check(!html.includes('href="#rsvp"'), 'RSVP navigation link is absent');
 check(!html.includes('id="rsvp-form"'), 'RSVP form is absent');
+check(!/<section\b[^>]*\bid="gallery"/i.test(html), 'gallery section is absent');
+check(!html.includes('href="#gallery"'), 'gallery navigation link is absent');
 
 const galleryItems = html.match(/<button\s+class="gallery-item"[\s\S]*?<\/button>/g) || [];
-check(galleryItems.length === 6, 'gallery contains exactly six buttons');
+check(galleryItems.length === 0, 'gallery items are absent');
 galleryItems.forEach((item, index) => {
   check(/<img\b[^>]*\balt="[^"]+"/i.test(item), `gallery image ${index + 1} has meaningful alt text`);
   check(/<img\b[^>]*\bloading="lazy"/i.test(item), `gallery image ${index + 1} lazy loads`);
