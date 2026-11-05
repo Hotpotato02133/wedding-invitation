@@ -1,12 +1,12 @@
-# Ivan & Lesley Wedding Invitation — Design Specification
+# Ivan & Leslie Wedding Invitation — Design Specification
 
 ## Purpose
 
-Create a single-page digital wedding invitation for Ivan and Lesley that feels elegant, romantic, personal, and distinctly suited to a Filipino wedding celebration. The page must work as a polished sample immediately while making names, copy, imagery, colors, music, and event details straightforward to replace.
+Create a single-page digital wedding invitation for Ivan and Leslie that feels elegant, romantic, personal, and distinctly suited to a Filipino wedding celebration. The page must work as a polished sample immediately while making names, copy, imagery, colors, music, and event details straightforward to replace.
 
 ## Confirmed Event Details
 
-- Couple: Ivan & Lesley
+- Couple: Ivan & Leslie
 - Date: December 8, 2026
 - Ceremony time: 4:30 PM
 - Ceremony and reception venue: Grand Astoria Regency, Pasonanca, Zamboanga City
@@ -20,10 +20,10 @@ The page should feel luxurious without becoming ornate or difficult to read. Dec
 
 ## Page Structure
 
-1. **Navigation and hero** — A transparent fixed navigation overlays the full-height hero, then gains an ivory surface on scroll. The hero includes the invitation eyebrow, Ivan and Lesley's names, date, venue, decorative divider, and a prominent View Details action. A floating music control remains reachable without obstructing content.
+1. **Navigation and hero** — A transparent fixed navigation overlays the full-height hero, then gains an ivory surface on scroll. The hero includes the invitation eyebrow, Ivan and Leslie's names, date, venue, decorative divider, and a prominent View Details action. A floating music control remains reachable without obstructing content.
 2. **Countdown** — Four live counters display days, hours, minutes, and seconds until December 8, 2026 at 4:30 PM Philippine time. Expired dates show a celebratory message instead of negative values.
 3. **Celebration details** — Cards communicate ceremony, reception, schedule, and attire. Ceremony and reception both take place at Grand Astoria Regency. A directions action opens Google Maps in a new tab.
-4. **The couple and story** — Two balanced profile cards introduce Ivan and Lesley, followed by a short sample love story and three-moment timeline. Copy is explicitly editable sample content.
+4. **The couple and story** — Two balanced profile cards introduce Ivan and Leslie, followed by a short sample love story and three-moment timeline. Copy is explicitly editable sample content.
 5. **Entourage** — A structured responsive layout covers parents, principal sponsors, honor attendants, bridesmaids and groomsmen, bearers, and flower girls using tasteful sample names.
 6. **Gallery** — A responsive editorial grid displays six engagement-style images. Each opens in an accessible lightbox with close, previous, and next controls, keyboard navigation, captions, and focus restoration.
 7. **RSVP** — The form collects full name, guest count, attendance, and an optional message. Client-side validation reports accessible inline errors. Valid submission changes the panel to a thank-you state and stores no personal information; a source comment identifies where to connect Formspree, Netlify Forms, or another backend.

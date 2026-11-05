@@ -1,8 +1,8 @@
-# Ivan & Lesley Wedding Invitation Implementation Plan
+# Ivan & Leslie Wedding Invitation Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a polished, responsive, single-page HTML/CSS/JavaScript wedding invitation for Ivan and Lesley with a live countdown, gallery lightbox, music control, navigation, scroll reveals, and validated RSVP confirmation.
+**Goal:** Build a polished, responsive, single-page HTML/CSS/JavaScript wedding invitation for Ivan and Leslie with a live countdown, gallery lightbox, music control, navigation, scroll reveals, and validated RSVP confirmation.
 
 **Architecture:** A semantic `index.html` supplies all readable content and accessible controls; `styles.css` owns the complete mobile-first visual system; `script.js` exposes pure countdown and RSVP-validation functions for Node tests and initializes browser-only interactions behind a DOM guard. Static asset folders document drop-in replacement filenames while remote placeholder photography keeps the first version visually complete.
 
@@ -11,7 +11,7 @@
 ## Global Constraints
 
 - No frontend framework or runtime dependency.
-- Confirmed details: Ivan & Lesley; December 8, 2026; 4:30 PM; Grand Astoria Regency, Pasonanca, Zamboanga City.
+- Confirmed details: Ivan & Leslie; December 8, 2026; 4:30 PM; Grand Astoria Regency, Pasonanca, Zamboanga City.
 - Theme: warm ivory, forest green, muted sage, champagne gold, and subtle blush, implemented with CSS custom properties.
 - Breakpoints: mobile through 480px, tablet 481–1024px, laptop 1025–1440px, and centered large-screen layouts above 1440px.
 - All interactive controls must have accessible names and at least 44×44px touch targets on mobile.
@@ -185,17 +185,17 @@ git commit -m "test: define countdown and RSVP behavior"
 
 Include in `index.html`:
 
-- UTF-8, responsive viewport, title `Ivan & Lesley | December 8, 2026`, description, theme color, and a data-URI heart favicon.
+- UTF-8, responsive viewport, title `Ivan & Leslie | December 8, 2026`, description, theme color, and a data-URI heart favicon.
 - Google Fonts preconnect and stylesheet for Great Vibes, Cormorant Garamond, and Montserrat.
 - Fixed header with monogram `I & L`, all section links, and accessible mobile toggle.
-- Full-height hero with invitation eyebrow, `Ivan & Lesley`, `December 08, 2026`, venue, decorative divider, and View Details link to `#details`.
+- Full-height hero with invitation eyebrow, `Ivan & Leslie`, `December 08, 2026`, venue, decorative divider, and View Details link to `#details`.
 - Countdown heading and four `[data-countdown="days|hours|minutes|seconds"]` values.
 - Celebration cards for ceremony at 4:30 PM, reception to follow, Grand Astoria Regency, and formal sage/champagne attire; add a Google Maps query link for the venue.
-- Profile images and sample biographies for Ivan and Lesley, plus a three-entry story timeline.
+- Profile images and sample biographies for Ivan and Leslie, plus a three-entry story timeline.
 - Filipino entourage groups covering parents, principal sponsors, honor attendants, bridesmaids/groomsmen, bearers, and flower girls with realistic sample names.
 - Six gallery buttons with remote placeholder images, descriptive alt text, `loading="lazy"`, `data-full`, and `data-caption`.
 - RSVP form with labels, `aria-describedby`, inline error elements, guest options 1–10, attendance options Yes/No, and an optional message.
-- Native `<audio id="wedding-music" preload="none" loop>` with `music/wedding-theme.mp3`, a floating music button, status live region, lightbox dialog, closing quote, hashtag `#IVANfoundhisLESLEY`, footer, and back-to-top button.
+- Native `<audio id="wedding-music" preload="none" loop>` with `music/wedding-theme.mp3`, a floating music button, status live region, lightbox dialog, closing quote, hashtag `#IVANfoundhisLESLIE`, footer, and back-to-top button.
 - HTML comments identifying editable sections, local image replacement paths, and the backend integration point.
 
 - [ ] **Step 2: Build the mobile-first CSS theme and component styling**

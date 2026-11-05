@@ -1,104 +1,286 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="The wedding celebration of Ivan and Lesley on December 8, 2026." />
-    <meta name="theme-color" content="#233d34" />
-    <title>Ivan &amp; Lesley | December 8, 2026</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23b39057' d='M32 56S4 40 4 19C4 7 19 3 32 17 45 3 60 7 60 19c0 21-28 37-28 37Z'/%3E%3C/svg%3E" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header">
-      <a class="monogram" href="#home" aria-label="Ivan and Leslie, home">Ivan <span>&amp;</span> Leslie</a>
-      <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><span class="sr-only">Toggle navigation</span><i></i><i></i><i></i></button>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="#home">Home</a><a href="#countdown">Countdown</a><a href="#details">Details</a><a href="#couple">Our Story</a><a href="#entourage">Entourage</a><a href="#gallery">Gallery</a>
-      </nav>
-    </header>
 
-    <main id="main-content">
-      <!-- EDITABLE: Hero image. Replace the remote image with images/couple-hero.jpg when available. -->
-      <section id="home" class="hero" aria-labelledby="hero-title">
-        <div class="hero-image" role="img" aria-label="A romantic bride and groom walking together outdoors"></div>
-        <div class="hero-content">
-          <p class="eyebrow light">Together with their families</p>
-          <p class="hero-invites">request the honour of your presence</p>
-          <h1 id="hero-title">Ivan <span>&amp;</span> Lesley</h1>
-          <p class="hero-date">December 08, 2026</p>
-          <div class="ornament" aria-hidden="true"><span></span>♥<span></span></div>
-          <p class="hero-venue">Grand Astoria Regency<br />Pasonanca, Zamboanga City</p>
-          <a class="button button-light" href="#details">View details <span aria-hidden="true">↓</span></a>
-        </div>
-      </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The wedding celebration of Ivan and Leslie on December 8, 2026." />
+  <meta name="theme-color" content="#233d34" />
+  <title>Ivan &amp; Leslie | December 8, 2026</title>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23b39057' d='M32 56S4 40 4 19C4 7 19 3 32 17 45 3 60 7 60 19c0 21-28 37-28 37Z'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
 
-      <section id="countdown" class="countdown-section section reveal" aria-labelledby="countdown-title">
-        <div class="section-heading"><p class="eyebrow">Save the date</p><h2 id="countdown-title">Counting down to forever</h2><div class="heading-divider" aria-hidden="true">✦</div></div>
-        <div class="countdown-grid" role="timer" aria-live="off" aria-atomic="false" aria-label="Time until the wedding">
-          <div><strong data-countdown="days">000</strong><span>Days</span></div><div><strong data-countdown="hours">00</strong><span>Hours</span></div><div><strong data-countdown="minutes">00</strong><span>Minutes</span></div><div><strong data-countdown="seconds">00</strong><span>Seconds</span></div>
-        </div>
-        <p id="countdown-status" class="countdown-status" aria-live="polite"></p>
-      </section>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="monogram" href="#home" aria-label="Ivan and Leslie, home"><img src="images/MONOGRAM.png" alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
+    <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><span
+        class="sr-only">Toggle navigation</span><i></i><i></i><i></i></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#countdown">Countdown</a><a href="#details">Details</a><a href="#couple">Our
+        Story</a><a href="#entourage">Entourage</a><a href="#gallery">Gallery</a>
+    </nav>
+  </header>
 
-      <!-- EDITABLE: Ceremony and reception information. -->
-      <section id="details" class="details-section section reveal" aria-labelledby="details-title">
-        <div class="section-heading"><p class="eyebrow">The celebration</p><h2 id="details-title">A day to remember</h2><div class="heading-divider" aria-hidden="true">✦</div></div>
-        <div class="details-grid">
-          <article class="detail-card"><div class="card-icon" aria-hidden="true">◷</div><h3>The ceremony</h3><p class="detail-feature">4:30 PM</p><p>Tuesday, December 8, 2026<br />Grand Astoria Regency</p><a href="https://www.google.com/maps/search/?api=1&amp;query=W3XF%2BWCG%20Astoria%20Regency%2C%20Pasonanca%20Road%2C%20Zamboanga%20City%2C%20Zamboanga%20Del%20Sur" target="_blank" rel="noopener noreferrer">View on Google Maps <span aria-hidden="true">↗</span></a></article>
-          <article class="detail-card"><div class="card-icon" aria-hidden="true">✦</div><h3>The reception</h3><p class="detail-feature">To follow</p><p>Join us for an evening of dinner, dancing, and the first toast to a beautiful new chapter.</p></article>
-          <article class="detail-card"><div class="card-icon" aria-hidden="true">⌂</div><h3>Our venue</h3><p class="detail-feature">Grand Astoria Regency</p><p>Stately, warm, and filled with old-world romance—our little corner of Pasonanca, Zamboanga City for the day.</p></article>
-          <article class="detail-card"><div class="card-icon" aria-hidden="true">✧</div><h3>Dress code</h3><p class="detail-feature">Formal</p><p>We invite you to wear your favourite shades of sage and champagne for a softly elegant celebration.</p></article>
-        </div>
-      </section>
+  <main id="main-content">
+    <!-- Hero background image: images/hero section background.jpg -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" role="img" aria-label="Floral wedding background for Ivan and Leslie"></div>
+      <div class="hero-content">
+        <p class="eyebrow light">Together with their families</p>
+        <p class="hero-invites">request the honour of your presence</p>
+        <h1 id="hero-title">Ivan <span>&amp;</span> Leslie</h1>
+        <p class="hero-date">December 08, 2026</p>
+        <p class="hero-time">4:00 PM</p>
+        <div class="ornament" aria-hidden="true"><span></span>♥<span></span></div>
+        <p class="hero-venue">Grand Astoria Regency<br />Pasonanca, Zamboanga City</p>
+        <a class="button button-light" href="#details">View details <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
 
-      <!-- EDITABLE: Replace the profile image URLs with images/groom.jpg and images/bride.jpg. -->
-      <section id="couple" class="couple-section section reveal" aria-labelledby="couple-title">
-        <div class="section-heading"><p class="eyebrow">The couple</p><h2 id="couple-title">Two hearts, one story</h2><div class="heading-divider" aria-hidden="true">✦</div></div>
-        <div class="couple-grid">
-          <article class="profile profile-groom"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Ivan in a dark suit smiling outdoors" loading="lazy" /><div class="profile-copy"><p class="eyebrow">The groom</p><h3>Ivan</h3><p>Grounded, kind, and always ready with a perfectly timed joke, Ivan makes every ordinary day feel a little more golden.</p></div></article>
-          <article class="profile profile-bride"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Lesley in an elegant white dress holding flowers" loading="lazy" /><div class="profile-copy"><p class="eyebrow">The bride</p><h3>Lesley</h3><p>Graceful, curious, and full of warmth, Lesley is the heart behind the thoughtful details that make a house feel like home.</p></div></article>
-        </div>
-        <div class="story" aria-label="Ivan and Lesley's story"><p class="eyebrow">Our story</p><ol class="story-timeline"><li><span>2018</span><div><h3>A hello that lingered</h3><p>They met over coffee and a conversation neither wanted to end.</p></div></li><li><span>2023</span><div><h3>The easiest yes</h3><p>Under a quiet sky and surrounded by loved ones, Ivan asked—and Lesley said yes.</p></div></li><li><span>2026</span><div><h3>Our forever begins</h3><p>With full hearts, they cannot wait to celebrate the beginning of married life with you.</p></div></li></ol></div>
-      </section>
+    <section id="countdown" class="countdown-section section reveal" aria-labelledby="countdown-title">
+      <div class="section-heading">
+        <p class="eyebrow">Save the date</p>
+        <h2 id="countdown-title"><em>Counting down to forever</em></h2>
+        <div class="heading-divider" aria-hidden="true">✦</div>
+      </div>
+      <div class="countdown-grid" role="timer" aria-live="off" aria-atomic="false" aria-label="Time until the wedding">
+        <div><strong data-countdown="days">000</strong><span>Days</span></div>
+        <div><strong data-countdown="hours">00</strong><span>Hours</span></div>
+        <div><strong data-countdown="minutes">00</strong><span>Minutes</span></div>
+        <div><strong data-countdown="seconds">00</strong><span>Seconds</span></div>
+      </div>
+      <p id="countdown-status" class="countdown-status" aria-live="polite"></p>
+    </section>
 
-      <section id="entourage" class="entourage-section section reveal" aria-labelledby="entourage-title">
-        <div class="section-heading"><p class="eyebrow">With love and gratitude</p><h2 id="entourage-title">Our entourage</h2><div class="heading-divider" aria-hidden="true">✦</div></div>
-        <div class="entourage-grid">
-          <section><h3>Parents of the Groom</h3><p>Mr. &amp; Mrs. Antonio Reyes</p><h3>Parents of the Bride</h3><p>Dr. &amp; Mrs. Roberto Santos</p></section>
-          <section><h3>Principal Sponsors</h3><p>Mr. &amp; Mrs. Daniel Cruz<br />Mr. &amp; Mrs. Miguel Villanueva<br />Atty. &amp; Mrs. Ramon Garcia<br />Mr. &amp; Mrs. Gabriel Tan</p></section>
-          <section><h3>Honor Attendants</h3><p>Bianca Reyes, Maid of Honor<br />Marco Santos, Best Man</p><h3>Bridesmaids &amp; Groomsmen</h3><p>Camille Cruz · Sofia Tan · Bea Lim<br />Adrian Reyes · Paolo Cruz · Nico Lim</p></section>
-          <section><h3>Bearers</h3><p>Lucas Santos, Ring Bearer<br />Ethan Reyes, Coin Bearer<br />Noah Cruz, Bible Bearer</p><h3>Flower Girls</h3><p>Amelia Tan · Isla Garcia · Mia Villanueva</p></section>
-        </div>
-      </section>
+    <!-- EDITABLE: Ceremony and reception information. -->
+    <section id="details" class="details-section section reveal" aria-labelledby="details-title">
+      <div class="section-heading">
+        <p class="eyebrow celebration-eyebrow">The <span class="celebration-word">Celebration</span></p>
+        <h2 id="details-title">A Day to Remember</h2>
+        <div class="heading-divider" aria-hidden="true">✦</div>
+      </div>
+      <div class="details-grid">
+        <article class="detail-card">
+          <div class="card-icon" aria-hidden="true">◷</div>
+          <h3>The Ceremony</h3>
+          <p class="detail-feature">4:30 PM</p>
+          <p>Tuesday, December 8, 2026<br />Grand Astoria Regency</p><a
+            href="https://www.google.com/maps/search/?api=1&amp;query=W3XF%2BWCG%20Astoria%20Regency%2C%20Pasonanca%20Road%2C%20Zamboanga%20City%2C%20Zamboanga%20Del%20Sur"
+            target="_blank" rel="noopener noreferrer">View on Google Maps <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="detail-card">
+          <div class="card-icon" aria-hidden="true">⌂</div>
+          <h3>Our Venue</h3>
+          <p class="detail-feature">Grand Astoria Regency</p>
+          <p>Stately, warm, and filled with old-world romance—our little corner of Pasonanca, Zamboanga City for the
+            day.</p>
+        </article>
+        <article class="detail-card detail-card-dress">
+          <div class="card-icon" aria-hidden="true">✧</div>
+          <h3>Dress Code</h3>
+          <p class="detail-feature">Formal</p>
+          <p>We invite you to celebrate with us in formal attire inspired by our wedding color palette.</p>
+          <div class="palette-preview" aria-label="Matcha-inspired wedding color palette">
+            <p class="palette-header">Matcha-Inspired Palette</p>
+            <div class="palette-swatches">
+              <div class="palette-swatch">
+                <span class="swatch-color" style="background-color: #5f5f30;" aria-hidden="true"></span>
+                <span class="swatch-name">Matcha Green</span>
+                <span class="swatch-role">Main accent</span>
+              </div>
+              <div class="palette-swatch">
+                <span class="swatch-color" style="background-color: #a7a580;" aria-hidden="true"></span>
+                <span class="swatch-name">Sage Green</span>
+                <span class="swatch-role">Soft support</span>
+              </div>
+              <div class="palette-swatch">
+                <span class="swatch-color" style="background-color: #cfbea2;" aria-hidden="true"></span>
+                <span class="swatch-name">Oat Beige</span>
+                <span class="swatch-role">Warmth</span>
+              </div>
+              <div class="palette-swatch">
+                <span class="swatch-color" style="background-color: #eae0cc;" aria-hidden="true"></span>
+                <span class="swatch-name">Warm Ivory</span>
+                <span class="swatch-role">Light base</span>
+              </div>
+              <div class="palette-swatch">
+                <span class="swatch-color" style="background-color: #87653c;" aria-hidden="true"></span>
+                <span class="swatch-name">Latte Brown</span>
+                <span class="swatch-role">Subtle depth</span>
+              </div>
+            </div>
+            <div class="palette-bar" aria-hidden="true">
+              <span style="width: 35%; background-color: #5f5f30;" title="Matcha Green: 35%"></span>
+              <span style="width: 20%; background-color: #a7a580;" title="Sage Green: 20%"></span>
+              <span style="width: 20%; background-color: #cfbea2;" title="Oat Beige: 20%"></span>
+              <span style="width: 20%; background-color: #eae0cc;" title="Warm Ivory: 20%"></span>
+              <span style="width: 5%; background-color: #87653c;" title="Latte Brown: 5%"></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <!-- EDITABLE: Replace gallery URLs and data-full URLs with images/gallery-1.jpg through images/gallery-6.jpg. -->
-      <section id="gallery" class="gallery-section section reveal" aria-labelledby="gallery-title">
-        <div class="section-heading"><p class="eyebrow">A few favourite moments</p><h2 id="gallery-title">Our gallery</h2><div class="heading-divider" aria-hidden="true">✦</div></div>
-        <div class="gallery-grid">
-          <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=2000&amp;q=90" data-caption="A sunlit celebration of love"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Couple celebrating their engagement in a sunlit field" loading="lazy" /></button>
-          <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=2000&amp;q=90" data-caption="A table set for togetherness"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Elegant wedding table decorated with flowers and candles" loading="lazy" /></button>
-          <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&amp;fit=crop&amp;w=2000&amp;q=90" data-caption="The little details"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Delicate flower arrangement at a wedding celebration" loading="lazy" /></button>
-          <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=2000&amp;q=90" data-caption="A beautiful beginning"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Bride and groom sharing a quiet moment together" loading="lazy" /></button>
-          <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=2000&amp;q=90" data-caption="Love in bloom"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="White flowers arranged for a romantic celebration" loading="lazy" /></button>
-          <button class="gallery-item" type="button" data-full="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=2000&amp;q=90" data-caption="Dancing into forever"><img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Couple holding hands during a joyful celebration" loading="lazy" /></button>
-        </div>
-      </section>
+    <!-- EDITABLE: Replace the profile image URLs with images/groom.jpg and images/bride.jpg. -->
+    <section id="couple" class="couple-section section reveal" aria-labelledby="couple-title">
+      <div class="section-heading">
+        <p class="eyebrow">The couple</p>
+        <h2 id="couple-title">Two hearts, one story</h2>
+        <div class="heading-divider" aria-hidden="true">✦</div>
+      </div>
+      <div class="couple-grid">
+        <article class="profile profile-groom"><img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+            alt="Ivan in a dark suit smiling outdoors" loading="lazy" />
+          <div class="profile-copy">
+            <p class="eyebrow">The groom</p>
+            <h3>Ivan</h3>
+            <p>Grounded, kind, and always ready with a perfectly timed joke, Ivan makes every ordinary day feel a little
+              more golden.</p>
+          </div>
+        </article>
+        <article class="profile profile-bride"><img
+            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+            alt="Leslie in an elegant white dress holding flowers" loading="lazy" />
+          <div class="profile-copy">
+            <p class="eyebrow">The bride</p>
+            <h3>Leslie</h3>
+            <p>Graceful, curious, and full of warmth, Leslie is the heart behind the thoughtful details that make a
+              house feel like home.</p>
+          </div>
+        </article>
+      </div>
+      <div class="story" aria-label="Ivan and Leslie's story">
+        <p class="eyebrow">Our story</p>
+        <ol class="story-timeline">
+          <li><span>2018</span>
+            <div>
+              <h3>A hello that lingered</h3>
+              <p>They met over coffee and a conversation neither wanted to end.</p>
+            </div>
+          </li>
+          <li><span>2023</span>
+            <div>
+              <h3>The easiest yes</h3>
+              <p>Under a quiet sky and surrounded by loved ones, Ivan asked—and Leslie said yes.</p>
+            </div>
+          </li>
+          <li><span>2026</span>
+            <div>
+              <h3>Our forever begins</h3>
+              <p>With full hearts, they cannot wait to celebrate the beginning of married life with you.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-    </main>
+    <section id="entourage" class="entourage-section section reveal" aria-labelledby="entourage-title">
+      <div class="section-heading">
+        <p class="eyebrow">With love and gratitude</p>
+        <h2 id="entourage-title">Our entourage</h2>
+        <div class="heading-divider" aria-hidden="true">✦</div>
+      </div>
+      <div class="entourage-grid">
+        <section>
+          <h3>Parents of the Groom</h3>
+          <p>Mr. &amp; Mrs. Antonio Reyes</p>
+          <h3>Parents of the Bride</h3>
+          <p>Dr. &amp; Mrs. Roberto Santos</p>
+        </section>
+        <section>
+          <h3>Principal Sponsors</h3>
+          <p>Mr. &amp; Mrs. Daniel Cruz<br />Mr. &amp; Mrs. Miguel Villanueva<br />Atty. &amp; Mrs. Ramon
+            Garcia<br />Mr. &amp; Mrs. Gabriel Tan</p>
+        </section>
+        <section>
+          <h3>Honor Attendants</h3>
+          <p>Bianca Reyes, Maid of Honor<br />Marco Santos, Best Man</p>
+          <h3>Bridesmaids &amp; Groomsmen</h3>
+          <p>Camille Cruz · Sofia Tan · Bea Lim<br />Adrian Reyes · Paolo Cruz · Nico Lim</p>
+        </section>
+        <section>
+          <h3>Bearers</h3>
+          <p>Lucas Santos, Ring Bearer<br />Ethan Reyes, Coin Bearer<br />Noah Cruz, Bible Bearer</p>
+          <h3>Flower Girls</h3>
+          <p>Amelia Tan · Isla Garcia · Mia Villanueva</p>
+        </section>
+      </div>
+    </section>
 
-    <section class="closing reveal" aria-label="Closing message"><p>“Love is patient, love is kind.” <cite>1 Corinthians 13:4</cite></p><strong>#IVANfoundhisLESLEY</strong></section>
-    <footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top">Ivan <span>&amp;</span> Leslie</a><p>Made with love for our favourite people.</p><small>© <span data-current-year>2026</span> Ivan &amp; Lesley</small></footer>
+    <!-- EDITABLE: Replace gallery URLs and data-full URLs with images/gallery-1.jpg through images/gallery-6.jpg. -->
+    <section id="gallery" class="gallery-section section reveal" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <p class="eyebrow">A few favourite moments</p>
+        <h2 id="gallery-title">Our gallery</h2>
+        <div class="heading-divider" aria-hidden="true">✦</div>
+      </div>
+      <div class="gallery-grid">
+        <button class="gallery-item" type="button"
+          data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
+          data-caption="A sunlit celebration of love"><img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+            alt="Couple celebrating their engagement in a sunlit field" loading="lazy" /></button>
+        <button class="gallery-item" type="button"
+          data-full="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
+          data-caption="A table set for togetherness"><img
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+            alt="Elegant wedding table decorated with flowers and candles" loading="lazy" /></button>
+        <button class="gallery-item" type="button"
+          data-full="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
+          data-caption="The little details"><img
+            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+            alt="Delicate flower arrangement at a wedding celebration" loading="lazy" /></button>
+        <button class="gallery-item" type="button"
+          data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
+          data-caption="A beautiful beginning"><img
+            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+            alt="Bride and groom sharing a quiet moment together" loading="lazy" /></button>
+        <button class="gallery-item" type="button"
+          data-full="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
+          data-caption="Love in bloom"><img
+            src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+            alt="White flowers arranged for a romantic celebration" loading="lazy" /></button>
+        <button class="gallery-item" type="button"
+          data-full="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=2000&amp;q=90"
+          data-caption="Dancing into forever"><img
+            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+            alt="Couple holding hands during a joyful celebration" loading="lazy" /></button>
+      </div>
+    </section>
 
-    <audio id="wedding-music" preload="metadata" autoplay loop><source src="music/paulyudin-wedding-music-valentines-day-182505.mp3" type="audio/mpeg" /></audio>
-    <button id="music-toggle" class="floating-control music-toggle" type="button" aria-label="Play background music" aria-pressed="false"><span aria-hidden="true">♫</span></button>
-    <p id="music-status" class="sr-only" aria-live="polite"></p>
-    <dialog id="gallery-lightbox" class="gallery-lightbox" aria-label="Photo gallery"><button class="lightbox-close" type="button" aria-label="Close image">×</button><figure><img src="" alt="Enlarged engagement photograph of Ivan and Lesley celebrating outdoors" loading="lazy" /><figcaption></figcaption></figure></dialog>
-    <a id="back-to-top" class="floating-control back-to-top" href="#home" aria-label="Back to top">↑</a>
-  </body>
+  </main>
+
+  <section class="closing reveal" aria-label="Closing message">
+    <p>“Love is patient, love is kind.” <cite>1 Corinthians 13:4</cite></p><strong>#IVANfoundhisLESLIE</strong>
+  </section>
+  <footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top"><img src="images/MONOGRAM.png" alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
+    <p>Made with love for our favourite people.</p><small>© <span data-current-year>2026</span> Ivan &amp;
+      Leslie</small>
+  </footer>
+
+  <audio id="wedding-music" preload="metadata" autoplay loop>
+    <source src="music/paulyudin-wedding-music-valentines-day-182505.mp3" type="audio/mpeg" />
+  </audio>
+  <button id="music-toggle" class="floating-control music-toggle" type="button" aria-label="Play background music"
+    aria-pressed="false"><span aria-hidden="true">♫</span></button>
+  <p id="music-status" class="sr-only" aria-live="polite"></p>
+  <dialog id="gallery-lightbox" class="gallery-lightbox" aria-label="Photo gallery"><button class="lightbox-close"
+      type="button" aria-label="Close image">×</button>
+    <figure><img src="" alt="Enlarged engagement photograph of Ivan and Leslie celebrating outdoors" loading="lazy" />
+      <figcaption></figcaption>
+    </figure>
+  </dialog>
+  <a id="back-to-top" class="floating-control back-to-top" href="#home" aria-label="Back to top">↑</a>
+</body>
+
 </html>
