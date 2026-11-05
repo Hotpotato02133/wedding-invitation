@@ -14,7 +14,7 @@ Create a single-page digital wedding invitation for Ivan and Leslie that feels e
 
 ## Visual Direction
 
-Use a botanical editorial style with warm ivory, forest green, muted sage, soft champagne gold, and subtle blush accents. The visual language combines restrained botanical ornament, generous whitespace, rounded editorial photography, fine borders, and gentle shadows. Typography pairs Great Vibes for signature accents, Cormorant Garamond for display headings, and Montserrat for interface and body copy.
+Use a botanical editorial style with warm ivory, forest green, muted sage, soft champagne gold, and subtle blush accents. The visual language combines restrained botanical ornament, generous whitespace, rounded editorial photography, fine borders, and gentle shadows. Typography pairs Parisienne for cursive signature titles and headings, and Quicksand for clean interface, structural subheadings, and body copy.
 
 The page should feel luxurious without becoming ornate or difficult to read. Decorations will be made with CSS, typographic symbols, and simple geometric accents. Placeholder photography will use stable remote image URLs with descriptive local replacement paths documented in HTML comments; neutral gradient fallbacks ensure the page remains presentable if an image fails.
 

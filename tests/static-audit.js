@@ -52,7 +52,7 @@ check(html.includes('<title>Ivan &amp; Leslie | December 8, 2026</title>'), 'con
 check(/<a class="monogram" href="#home" aria-label="Ivan and Leslie, home">\s*<img[^>]+src="images\/MONOGRAM\.png"/i.test(html), 'navigation logo displays MONOGRAM.png');
 check(/<footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top">\s*<img[^>]+src="images\/MONOGRAM\.png"/i.test(html), 'footer logo displays MONOGRAM.png');
 check(/<link\s+rel="icon"[^>]+href="data:image\/svg\+xml,/i.test(html), 'data-URI favicon is present');
-['Great+Vibes', 'Cormorant+Garamond', 'Montserrat'].forEach((font) => {
+['Parisienne', 'Quicksand'].forEach((font) => {
   check(html.includes(font), `${font.replaceAll('+', ' ')} font is requested`);
 });
 check(html.includes('href="styles.css"') && html.includes('src="script.js"'), 'local stylesheet and script are linked');
