@@ -180,6 +180,12 @@ body.lightbox-open { overflow: hidden; }
 .gallery-lightbox:not([open]) { display: none; }
 .gallery-lightbox.is-fallback-modal[open] { display: block; }
 
+@media (max-width: 767px) {
+  .hero { place-items: start center; }
+  .hero-content { padding-top: clamp(4.8rem, 10vh, 5.8rem); padding-bottom: 2.5rem; }
+  .hero-prelude { margin-bottom: clamp(3.5rem, 9.5vh, 6rem); }
+}
+
 @media (min-width: 481px) { .couple-grid, .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.profile { align-items: start; }.profile-copy { padding: .5rem 0; }.rsvp-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }.form-wide { grid-column: 1 / -1; } }
 @media (min-width: 768px) { .site-header { padding-right: 4vw; padding-left: 4vw; }.hero-content { padding-top: 5rem; }.details-grid { grid-template-columns: repeat(2, 1fr); }.detail-card-dress { grid-column: 1 / -1; }.couple-grid { gap: clamp(2rem, 7vw, 6rem); }.profile-groom .profile-copy { order: -1; text-align: right; }.profile-groom .profile-copy p:last-child { margin-left: auto; }.gallery-grid { grid-template-columns: repeat(4, 1fr); }.gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 2; }.gallery-item:nth-child(1) img, .gallery-item:nth-child(4) img { aspect-ratio: 16 / 10; } }
 @media (min-width: 1025px) { .site-header { background: linear-gradient(to bottom, rgba(10, 27, 21, .52), transparent); }.nav-toggle { display: none; }.site-nav { position: static; display: flex; min-width: 0; padding: 0; gap: .2rem; background: transparent; box-shadow: none; }.site-nav a { min-height: 44px; padding: .45rem .8rem; }.countdown-grid { grid-template-columns: repeat(4, 1fr); }.details-grid { grid-template-columns: repeat(3, 1fr); }.detail-card-dress { grid-column: auto; }.couple-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.profile { grid-template-columns: minmax(0, 1fr) minmax(12rem, .8fr); }.profile-bride .profile-copy { order: -1; text-align: right; }.profile-bride .profile-copy p:last-child { margin-left: auto; }.profile-groom .profile-copy { order: initial; text-align: left; }.profile-groom .profile-copy p:last-child { margin-left: 0; }.gallery-grid { grid-template-columns: repeat(3, 1fr); }.gallery-item, .gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: auto; }.gallery-item:nth-child(1), .gallery-item:nth-child(4) { grid-column: span 2; }.gallery-item:nth-child(1) img, .gallery-item:nth-child(4) img { aspect-ratio: 16 / 9; } }
