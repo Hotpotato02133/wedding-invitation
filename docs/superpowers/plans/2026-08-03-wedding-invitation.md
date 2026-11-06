@@ -186,7 +186,7 @@ git commit -m "test: define countdown and RSVP behavior"
 Include in `index.html`:
 
 - UTF-8, responsive viewport, title `Ivan & Leslie | December 8, 2026`, description, theme color, and a data-URI heart favicon.
-- Google Fonts preconnect and stylesheet for Parisienne and Quicksand.
+- Google Fonts preconnect and stylesheet for Parisienne, with Times New Roman for body and structural interface copy.
 - Fixed header with monogram `I & L`, all section links, and accessible mobile toggle.
 - Full-height hero with invitation eyebrow, `Ivan & Leslie`, `December 08, 2026`, venue, decorative divider, and View Details link to `#details`.
 - Countdown heading and four `[data-countdown="days|hours|minutes|seconds"]` values.

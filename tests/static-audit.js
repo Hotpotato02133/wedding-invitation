@@ -52,11 +52,12 @@ check(html.includes('<title>Ivan &amp; Leslie | December 8, 2026</title>'), 'con
 check(/<a class="monogram" href="#home" aria-label="Ivan and Leslie, home">\s*<img[^>]+src="images\/MONOGRAM\.png"/i.test(html), 'navigation logo displays MONOGRAM.png');
 check(/<footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top">\s*<img[^>]+src="images\/MONOGRAM\.png"/i.test(html), 'footer logo displays MONOGRAM.png');
 check(/<link\s+rel="icon"[^>]+href="data:image\/svg\+xml,/i.test(html), 'data-URI favicon is present');
-['Parisienne', 'Quicksand'].forEach((font) => {
+['Parisienne'].forEach((font) => {
   check(html.includes(font), `${font.replaceAll('+', ' ')} font is requested`);
 });
 check(html.includes('href="styles.css"') && html.includes('src="script.js"'), 'local stylesheet and script are linked');
-['December 08, 2026', '4:30 PM', 'Grand Astoria Regency'].forEach((detail) => {
+check(css.includes('Times New Roman'), 'Times New Roman font is used in stylesheet');
+['December 08, 2026', '4:00 PM', 'Grand Astoria Regency'].forEach((detail) => {
   check(html.includes(detail), `confirmed content is preserved: ${detail}`);
 });
 check(html.includes('href="https://www.google.com/maps/search/?api=1&amp;query=W3XF%2BWCG%20Astoria%20Regency%2C%20Pasonanca%20Road%2C%20Zamboanga%20City%2C%20Zamboanga%20Del%20Sur"'), 'directions link targets Astoria Regency by exact Plus Code and address');

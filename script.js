@@ -68,6 +68,7 @@ function initSite() {
   }
 
   const header = document.querySelector('.site-header');
+  const backToTop = document.querySelector('#back-to-top');
   const navToggle = document.querySelector('#nav-toggle');
   const siteNav = document.querySelector('#site-nav');
   const closeMenu = ({ returnFocus = false } = {}) => {
@@ -89,12 +90,23 @@ function initSite() {
     }
     window.setTimeout(() => focusTarget.focus({ preventScroll: true }), 0);
   };
-  const updateHeader = () => {
-    if (header) header.classList.toggle('is-scrolled', window.scrollY > 24);
+
+  let scrollTicking = false;
+  const updateScrollState = () => {
+    const scrollY = window.scrollY;
+    if (header) header.classList.toggle('is-scrolled', scrollY > 24);
+    if (backToTop) backToTop.hidden = scrollY <= 600;
+    scrollTicking = false;
+  };
+  const onScroll = () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateScrollState);
+      scrollTicking = true;
+    }
   };
 
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateScrollState();
+  window.addEventListener('scroll', onScroll, { passive: true });
 
   if (navToggle && siteNav) {
     navToggle.addEventListener('click', () => {
@@ -403,13 +415,6 @@ function initSite() {
     rsvpFields.disabled = false;
   }
 
-  const backToTop = document.querySelector('#back-to-top');
-  const updateBackToTop = () => {
-    if (backToTop) backToTop.hidden = window.scrollY <= 600;
-  };
-
-  updateBackToTop();
-  window.addEventListener('scroll', updateBackToTop, { passive: true });
   document.querySelectorAll('[data-current-year]').forEach((element) => {
     element.textContent = String(new Date().getFullYear());
   });

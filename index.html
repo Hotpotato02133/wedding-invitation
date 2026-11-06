@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
@@ -22,7 +22,7 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header">
     <a class="monogram" href="#home" aria-label="Ivan and Leslie, home"><img src="images/MONOGRAM.png"
-        alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
+        alt="Ivan and Leslie monogram" class="monogram-img" width="387" height="400" loading="lazy" decoding="async" /></a>
     <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><span
         class="sr-only">Toggle navigation</span><i></i><i></i><i></i></button>
     <nav id="site-nav" class="site-nav" aria-label="Main navigation">
@@ -36,8 +36,10 @@
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="hero-image" role="img" aria-label="Floral wedding background for Ivan and Leslie"></div>
       <div class="hero-content">
-        <p class="eyebrow light">Together with their families</p>
-        <p class="hero-invites">request the honour of your presence</p>
+        <div class="hero-prelude">
+          <p class="eyebrow light">Together with their families</p>
+          <p class="hero-invites">request the honour of your presence</p>
+        </div>
         <h1 id="hero-title">Ivan <span>&amp;</span> Leslie</h1>
         <p class="hero-date">December 08, 2026</p>
         <p class="hero-time">4:00 PM</p>
@@ -68,62 +70,173 @@
         <h2 id="entourage-title">Our Entourage</h2>
         <div class="heading-divider" aria-hidden="true">✦</div>
       </div>
-      <div class="entourage-grid">
-        <section>
-          <h3>Parents of the Groom</h3>
-          <p>Mr. Basher O. Jamahali &amp;<br />Mrs. Simplicia N. Jamahali</p>
-          <h3>Parents of the Bride</h3>
-          <p>Mrs. Letecia B. Sabordo &amp;<br />Mr. Lary E. Sabordo</p>
-        </section>
-        <section>
-          <h3>Bridesmaids</h3>
-          <p>
-            Jean Valerie A. Sumaya<br />
-            Jeizel F. Ramonez<br />
-            Elizabeth P. Sevilla<br />
-            Animor R. Gellecania<br />
-            Juliebeth J. Cornelia<br />
-            Cherilyn T. Abatayo<br />
-            Raquel L. Alunsagay<br />
-            Rea L. Alunsagay<br />
-            Daisy Mae V. Bostillo<br />
-            Kristine Jane B. Sabordo
-          </p>
-        </section>
-        <section>
-          <h3>Groomsmen</h3>
-          <p>
-            Lowell B. Sabordo<br />
-            Randy Badia on<br />
-            Jelo Liganan<br />
-            Jefferson Matthew D. Hanginan<br />
-            Eljone E. Badia on<br />
-            Joshua S. Guerrero<br />
-            Aldrine C. Villacampa<br />
-            Anthony Rigdon S. Sidney<br />
-            Arjay B. Sabordo<br />
-            Morfydd Alar
-          </p>
-        </section>
-        <section>
-          <h3>Flower Girls</h3>
-          <p>
-            Nathalie S. Remigio<br />
-            Hannellie T. Clemente<br />
-            Malka Maurein Laranjo<br />
-            Elisha B. Damaso<br />
-            Brienne C. Nalzaro<br />
-            Aira B. Sabordo<br />
-            Ericah Mae A. Bandal
-          </p>
-          <h3>Bearers</h3>
-          <p>
-            Elijah Rey J. Codiom, Bible Bearer<br />
-            Matheo Franchesco R. Gregorio, Ring Bearer<br />
-            Paul Jim J. Flaga, Coin Bearer<br />
-            Benaiah Kirken D. Ojeda, Contract Bearer
-          </p>
-        </section>
+
+      <div class="entourage-card">
+        <!-- Botanical corner watercolor foliage matching invitation card design -->
+        <svg class="entourage-leaf entourage-leaf--tl" viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M -10 -10 C 20 20 45 60 65 120 C 72 142 85 160 105 175" stroke="#5d755c" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <path d="M 12 18 C 24 10 46 16 52 30 C 44 42 24 38 12 18 Z" fill="#7a927a" opacity="0.75"/>
+          <path d="M 22 36 C 8 46 6 68 14 78 C 24 74 30 54 22 36 Z" fill="#5c745e" opacity="0.8"/>
+          <path d="M 36 54 C 54 50 72 62 76 76 C 66 86 48 82 36 54 Z" fill="#8ca58b" opacity="0.75"/>
+          <path d="M 48 78 C 34 90 32 110 42 120 C 50 114 54 96 48 78 Z" fill="#556e57" opacity="0.85"/>
+          <path d="M 60 98 C 80 98 94 112 96 128 C 84 136 70 128 60 98 Z" fill="#728c72" opacity="0.75"/>
+          <path d="M 66 120 C 54 134 56 152 66 160 C 74 154 76 138 66 120 Z" fill="#5e7861" opacity="0.8"/>
+          <path d="M 82 138 C 100 142 114 156 114 170 C 100 176 90 166 82 138 Z" fill="#88a187" opacity="0.7"/>
+          <path d="M 104 172 C 116 182 122 192 120 196 C 114 194 108 184 104 172 Z" fill="#69836b" opacity="0.8"/>
+        </svg>
+        <svg class="entourage-leaf entourage-leaf--tr" viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M -10 -10 C 20 20 45 60 65 120 C 72 142 85 160 105 175" stroke="#5d755c" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <path d="M 12 18 C 24 10 46 16 52 30 C 44 42 24 38 12 18 Z" fill="#7a927a" opacity="0.75"/>
+          <path d="M 22 36 C 8 46 6 68 14 78 C 24 74 30 54 22 36 Z" fill="#5c745e" opacity="0.8"/>
+          <path d="M 36 54 C 54 50 72 62 76 76 C 66 86 48 82 36 54 Z" fill="#8ca58b" opacity="0.75"/>
+          <path d="M 48 78 C 34 90 32 110 42 120 C 50 114 54 96 48 78 Z" fill="#556e57" opacity="0.85"/>
+          <path d="M 60 98 C 80 98 94 112 96 128 C 84 136 70 128 60 98 Z" fill="#728c72" opacity="0.75"/>
+          <path d="M 66 120 C 54 134 56 152 66 160 C 74 154 76 138 66 120 Z" fill="#5e7861" opacity="0.8"/>
+          <path d="M 82 138 C 100 142 114 156 114 170 C 100 176 90 166 82 138 Z" fill="#88a187" opacity="0.7"/>
+          <path d="M 104 172 C 116 182 122 192 120 196 C 114 194 108 184 104 172 Z" fill="#69836b" opacity="0.8"/>
+        </svg>
+        <svg class="entourage-leaf entourage-leaf--bl" viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M -10 -10 C 20 20 45 60 65 120 C 72 142 85 160 105 175" stroke="#5d755c" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <path d="M 12 18 C 24 10 46 16 52 30 C 44 42 24 38 12 18 Z" fill="#7a927a" opacity="0.75"/>
+          <path d="M 22 36 C 8 46 6 68 14 78 C 24 74 30 54 22 36 Z" fill="#5c745e" opacity="0.8"/>
+          <path d="M 36 54 C 54 50 72 62 76 76 C 66 86 48 82 36 54 Z" fill="#8ca58b" opacity="0.75"/>
+          <path d="M 48 78 C 34 90 32 110 42 120 C 50 114 54 96 48 78 Z" fill="#556e57" opacity="0.85"/>
+          <path d="M 60 98 C 80 98 94 112 96 128 C 84 136 70 128 60 98 Z" fill="#728c72" opacity="0.75"/>
+          <path d="M 66 120 C 54 134 56 152 66 160 C 74 154 76 138 66 120 Z" fill="#5e7861" opacity="0.8"/>
+          <path d="M 82 138 C 100 142 114 156 114 170 C 100 176 90 166 82 138 Z" fill="#88a187" opacity="0.7"/>
+          <path d="M 104 172 C 116 182 122 192 120 196 C 114 194 108 184 104 172 Z" fill="#69836b" opacity="0.8"/>
+        </svg>
+        <svg class="entourage-leaf entourage-leaf--br" viewBox="0 0 160 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M -10 -10 C 20 20 45 60 65 120 C 72 142 85 160 105 175" stroke="#5d755c" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <path d="M 12 18 C 24 10 46 16 52 30 C 44 42 24 38 12 18 Z" fill="#7a927a" opacity="0.75"/>
+          <path d="M 22 36 C 8 46 6 68 14 78 C 24 74 30 54 22 36 Z" fill="#5c745e" opacity="0.8"/>
+          <path d="M 36 54 C 54 50 72 62 76 76 C 66 86 48 82 36 54 Z" fill="#8ca58b" opacity="0.75"/>
+          <path d="M 48 78 C 34 90 32 110 42 120 C 50 114 54 96 48 78 Z" fill="#556e57" opacity="0.85"/>
+          <path d="M 60 98 C 80 98 94 112 96 128 C 84 136 70 128 60 98 Z" fill="#728c72" opacity="0.75"/>
+          <path d="M 66 120 C 54 134 56 152 66 160 C 74 154 76 138 66 120 Z" fill="#5e7861" opacity="0.8"/>
+          <path d="M 82 138 C 100 142 114 156 114 170 C 100 176 90 166 82 138 Z" fill="#88a187" opacity="0.7"/>
+          <path d="M 104 172 C 116 182 122 192 120 196 C 114 194 108 184 104 172 Z" fill="#69836b" opacity="0.8"/>
+        </svg>
+
+        <!-- Segmented vertical side accent rails matching invitation reference -->
+        <div class="entourage-side-rail entourage-side-rail--left" aria-hidden="true">
+          <span class="rail-seg rail-seg--top"></span>
+          <span class="rail-seg rail-seg--mid"></span>
+          <span class="rail-seg rail-seg--bottom"></span>
+        </div>
+        <div class="entourage-side-rail entourage-side-rail--right" aria-hidden="true">
+          <span class="rail-seg rail-seg--top"></span>
+          <span class="rail-seg rail-seg--mid"></span>
+          <span class="rail-seg rail-seg--bottom"></span>
+        </div>
+
+        <div class="entourage-card-content">
+          <!-- Top 2-Column Block: Best Man / Maid of Honor & Groomsmen / Bridesmaid -->
+          <div class="entourage-duo-grid entourage-top-grid">
+            <div class="entourage-block">
+              <h3 class="entourage-role">Best Man</h3>
+              <p class="entourage-names">Leomar P. Pineda</p>
+            </div>
+            <div class="entourage-block">
+              <h3 class="entourage-role">Maid of Honor</h3>
+              <p class="entourage-names">
+                Laira Mae B. Sabordo<br />
+                Glaydyle Faith Rostata
+              </p>
+            </div>
+            <div class="entourage-block">
+              <h3 class="entourage-role">Groomsmen</h3>
+              <p class="entourage-names">
+                Lowell B. Sabordo<br />
+                Randy S. Badia-on<br />
+                Jelo Liganan<br />
+                Jeffersn Matthew D. Hanginan<br />
+                Eljone E. Badia-on<br />
+                Joshua S. Guerrero<br />
+                Aldrine C. Villacampa<br />
+                Anthony Rigdon S. Sidney<br />
+                Arjay B. Saboro<br />
+                Morfydd Alar
+              </p>
+            </div>
+            <div class="entourage-block">
+              <h3 class="entourage-role">Bridesmaid</h3>
+              <p class="entourage-names">
+                Jean Valerie A. Sumaya<br />
+                Jeizel F. Ramonez<br />
+                Elizabeth P. Sevilla<br />
+                Animor R. Gellecania<br />
+                Juliebeth J. Cornelia<br />
+                Cherilyn T. Abatayo<br />
+                Raquel L. Alunsagay<br />
+                Rea L. Alunsagay<br />
+                Daisy Mae V. Bostillo<br />
+                Kristine Jane B. Sabordo
+              </p>
+            </div>
+          </div>
+
+          <!-- Middle Section: Secondary Sponsors (Script Title + 3 Columns) -->
+          <div class="entourage-secondary-section">
+            <h3 class="entourage-secondary-title">Secondary Sponsors</h3>
+            <div class="entourage-trio-grid">
+              <div class="entourage-block">
+                <h4 class="entourage-role">Cord</h4>
+                <p class="entourage-names">
+                  Marvee J. Codiom<br />
+                  Raymond S. Codiom
+                </p>
+              </div>
+              <div class="entourage-block">
+                <h4 class="entourage-role">Veil</h4>
+                <p class="entourage-names">
+                  Venjie B. Sabordo<br />
+                  Liezel S. Sioco
+                </p>
+              </div>
+              <div class="entourage-block">
+                <h4 class="entourage-role">Candle</h4>
+                <p class="entourage-names">
+                  Dave D. Jamahali<br />
+                  Brenda V. Jamahali
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom 2-Column Block: Flower Girls & Bearers -->
+          <div class="entourage-duo-grid entourage-bottom-grid">
+            <div class="entourage-block">
+              <h3 class="entourage-role">Flower Girls</h3>
+              <p class="entourage-names">
+                Nathalie S. Remigio<br />
+                Brienne Nalzaro<br />
+                Elisha B. Damaso<br />
+                Hannellie Clemente<br />
+                Malka<br />
+                Aira Sabordo
+              </p>
+            </div>
+            <div class="entourage-bearers-col">
+              <div class="entourage-block">
+                <h3 class="entourage-role">Bible Bearer</h3>
+                <p class="entourage-names">Elijah Rey J. Codiom</p>
+              </div>
+              <div class="entourage-block">
+                <h3 class="entourage-role">Ring Bearer</h3>
+                <p class="entourage-names">Matheo Franchesco R. Gregorio</p>
+              </div>
+              <div class="entourage-block">
+                <h3 class="entourage-role">Coin Bearer</h3>
+                <p class="entourage-names">Paul Jim J. Flaga</p>
+              </div>
+              <div class="entourage-block">
+                <h3 class="entourage-role">Contract Bearer</h3>
+                <p class="entourage-names">Benaiah Kirken D. Ojeda</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -138,7 +251,7 @@
         <article class="detail-card">
           <div class="card-icon" aria-hidden="true">◷</div>
           <h3>The Ceremony</h3>
-          <p class="detail-feature">4:30 PM</p>
+          <p class="detail-feature">4:00 PM</p>
           <p>Tuesday, December 8, 2026<br />Grand Astoria Regency</p><a
             href="https://www.google.com/maps/search/?api=1&amp;query=W3XF%2BWCG%20Astoria%20Regency%2C%20Pasonanca%20Road%2C%20Zamboanga%20City%2C%20Zamboanga%20Del%20Sur"
             target="_blank" rel="noopener noreferrer">View on Google Maps <span aria-hidden="true">↗</span></a>
@@ -147,7 +260,7 @@
           <div class="card-icon" aria-hidden="true">⌂</div>
           <h3>Our Venue</h3>
           <p class="detail-feature">Grand Astoria Regency</p>
-          <p>Stately, warm, and filled with old-world romance—our little corner of Pasonanca, Zamboanga City for the
+          <p>Stately, warm, and filled with old-world romance our little corner of Pasonanca, Zamboanga City for the
             day.</p>
         </article>
         <article class="detail-card detail-card-dress">
@@ -201,7 +314,7 @@
         <div class="carousel-track">
           <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
             <img src="images/carousel 1.jpg" alt="Ivan and Leslie smiling together in celebration" class="carousel-img"
-              loading="lazy" />
+              width="2048" height="1365" loading="lazy" decoding="async" />
             <div class="carousel-overlay">
               <div class="section-heading carousel-heading">
                 <p class="eyebrow light">The couple</p>
@@ -212,7 +325,7 @@
           </div>
           <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
             <img src="images/carousel 2.jpg" alt="Romantic portrait of Ivan and Leslie" class="carousel-img"
-              loading="lazy" />
+              width="2048" height="1365" loading="lazy" decoding="async" />
             <div class="carousel-overlay">
               <div class="section-heading carousel-heading">
                 <p class="eyebrow light">The couple</p>
@@ -223,7 +336,7 @@
           </div>
           <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
             <img src="images/carousel 3.jpg" alt="Ivan and Leslie sharing a tender moment" class="carousel-img"
-              loading="lazy" />
+              width="2048" height="1365" loading="lazy" decoding="async" />
             <div class="carousel-overlay">
               <div class="section-heading carousel-heading">
                 <p class="eyebrow light">The couple</p>
@@ -234,7 +347,7 @@
           </div>
           <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
             <img src="images/carousel 4.jpg" alt="Ivan and Leslie walking hand in hand outdoors" class="carousel-img"
-              loading="lazy" />
+              width="2048" height="1365" loading="lazy" decoding="async" />
             <div class="carousel-overlay">
               <div class="section-heading carousel-heading">
                 <p class="eyebrow light">The couple</p>
@@ -268,7 +381,7 @@
     <p>“Love is patient, love is kind.” <cite>1 Corinthians 13:4</cite></p><strong>#IVANfoundhisLESLIE</strong>
   </section>
   <footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top"><img src="images/MONOGRAM.png"
-        alt="Ivan and Leslie monogram" class="monogram-img" loading="lazy" /></a>
+        alt="Ivan and Leslie monogram" class="monogram-img" width="387" height="400" loading="lazy" decoding="async" /></a>
     <p>Made with love for our favourite people.</p><small>© <span data-current-year>2026</span> Ivan &amp;
       Leslie</small>
   </footer>
@@ -281,7 +394,7 @@
   <p id="music-status" class="sr-only" aria-live="polite"></p>
   <dialog id="gallery-lightbox" class="gallery-lightbox" aria-label="Photo gallery"><button class="lightbox-close"
       type="button" aria-label="Close image">×</button>
-    <figure><img src="" alt="Enlarged engagement photograph of Ivan and Leslie celebrating outdoors" loading="lazy" />
+    <figure><img src="" alt="Enlarged engagement photograph of Ivan and Leslie celebrating outdoors" loading="lazy" decoding="async" />
       <figcaption></figcaption>
     </figure>
   </dialog>
