@@ -51,7 +51,7 @@ check(/<meta\s+name="theme-color"[^>]+content="#[0-9a-f]{6}"/i.test(html), 'them
 check(html.includes('<title>Ivan &amp; Leslie | December 8, 2026</title>'), 'confirmed page title is present');
 check(/<a class="monogram" href="#home" aria-label="Ivan and Leslie, home">\s*<img[^>]+src="images\/MONOGRAM\.png"/i.test(html), 'navigation logo displays MONOGRAM.png');
 check(/<footer class="site-footer"><a class="monogram" href="#home" aria-label="Back to top">\s*<img[^>]+src="images\/MONOGRAM\.png"/i.test(html), 'footer logo displays MONOGRAM.png');
-check(/<link\s+rel="icon"[^>]+href="data:image\/svg\+xml,/i.test(html), 'data-URI favicon is present');
+check(/<link\s+rel="icon"[^>]+href="images\/MONOGRAM\.png"/i.test(html), 'favicon displays MONOGRAM.png');
 ['Parisienne'].forEach((font) => {
   check(html.includes(font), `${font.replaceAll('+', ' ')} font is requested`);
 });
