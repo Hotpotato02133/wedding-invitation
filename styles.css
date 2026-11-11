@@ -48,7 +48,7 @@ h1 span { margin: 0 .15em; color: var(--gold); font-family: "Parisienne", cursiv
 .site-nav a:hover { color: var(--champagne-text); }
 .nav-toggle[aria-expanded="true"] + .site-nav { display: block; }
 
-.hero { position: relative; display: grid; min-height: 100svh; place-items: center; isolation: isolate; color: var(--paper); text-align: center; }
+.hero { position: relative; display: grid; min-height: 100svh; place-items: center; isolation: isolate; overflow: hidden; color: var(--paper); text-align: center; }
 .hero-image { position: absolute; z-index: -2; inset: 0; background: center / cover no-repeat url("images/hero%20section%20background.jpg"); transform: translateZ(0); }
 .hero::after { position: absolute; z-index: -1; inset: 0; content: ""; background: radial-gradient(ellipse at center, rgba(14, 28, 22, .52) 0%, rgba(8, 18, 14, .82) 100%), linear-gradient(180deg, rgba(10, 24, 18, .72) 0%, rgba(10, 24, 18, .48) 50%, rgba(10, 24, 18, .82) 100%); }
 .hero-content { width: min(90%, 47rem); padding: clamp(4.5rem, 8vh, 5.5rem) 0 3rem; text-shadow: 0 2px 12px rgba(0, 0, 0, .75), 0 1px 3px rgba(0, 0, 0, .9); }
@@ -158,6 +158,7 @@ body.lightbox-open { overflow: hidden; }
 
 @media (max-width: 767px) {
   .hero { place-items: start center; }
+  .hero-image { transform: translateX(3.5%) scale(1.15) translateZ(0); transform-origin: center center; }
   .hero-content { padding-top: clamp(4.8rem, 10vh, 5.8rem); padding-bottom: 2.5rem; }
   .hero-prelude { margin-bottom: clamp(3.5rem, 9.5vh, 6rem); }
 }
